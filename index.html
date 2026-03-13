@@ -550,8 +550,8 @@
 
 
     <!-- 图片预览模态框 -->
-    <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4" onclick="closeImageModal()">
-        <button class="absolute top-6 right-6 text-white text-3xl" onclick="closeImageModal()">
+    <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" style="display: none;" onclick="closeImageModal()">
+        <button class="absolute top-6 right-6 text-white text-3xl cursor-pointer" onclick="closeImageModal()">
             <i class="fas fa-times"></i>
         </button>
         <img id="modalImage" src="" alt="预览大图" class="max-w-full max-h-[90vh] rounded-lg">
@@ -588,12 +588,12 @@
 
         function openImageModal(src) {
             modalImage.src = src;
-            imageModal.classList.remove('hidden');
+            imageModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeImageModal() {
-            imageModal.classList.add('hidden');
+            imageModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
